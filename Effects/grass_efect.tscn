@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://brrivm6pd1j3b"]
 
-[ext_resource type="Script" path="res://Effects/grass_efect.cs" id="1_h7dic"]
 [ext_resource type="Texture2D" uid="uid://bjnv6gsl1mr5v" path="res://Effects/GrassEffect.png" id="1_mwmhr"]
+[ext_resource type="Script" uid="uid://b3m72usvv5x0n" path="res://Effects/grass_efect.gd" id="1_racrj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p3mt"]
 atlas = ExtResource("1_mwmhr")
@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [node name="GrassEfect" type="Node2D"]
-script = ExtResource("1_h7dic")
+script = ExtResource("1_racrj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_chlro")
@@ -55,4 +55,4 @@ animation = &"Animate"
 centered = false
 offset = Vector2(-8, -8)
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="OnAnimatedSprite2dAnimationFinished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
