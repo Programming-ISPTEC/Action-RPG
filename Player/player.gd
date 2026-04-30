@@ -83,5 +83,4 @@ func rollState(delta) -> void:
 	
 
 func rollAnimationFinished():
-	print("Entrou")
 	state = movimento.MOVE;

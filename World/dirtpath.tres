@@ -1,14 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq2afo0oggabd"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cuuxsd0j5f56b"]
 
-[ext_resource type="PackedScene" uid="uid://dlw8k0qrb6ouf" path="res://Player/player.tscn" id="1_8ewt3"]
-[ext_resource type="Texture2D" uid="uid://bl63ngg6hpqi1" path="res://World/GrassBackground.png" id="1_m1u1f"]
-[ext_resource type="Texture2D" uid="uid://c54qn4siiijd1" path="res://World/DirtTileset.png" id="2_1cetj"]
-[ext_resource type="PackedScene" uid="uid://bb4uev1vkmx7" path="res://World/bush.tscn" id="2_n5s63"]
-[ext_resource type="TileSet" uid="uid://qf3ne4hc53p7" path="res://World/cliffTileset.tres" id="3_dwbse"]
-[ext_resource type="PackedScene" uid="uid://cj3ao0ape72t3" path="res://World/grass.tscn" id="6_ivxba"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h7oyx"]
+load_path = "res://.godot/imported/DirtTileset.png-4e52e2a032d2a3147ded644a2054b3ec.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwbse"]
-texture = ExtResource("2_1cetj")
+texture = SubResource("CompressedTexture2D_h7oyx")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -339,89 +335,8 @@ texture = ExtResource("2_1cetj")
 8:4/0/terrains_peering_bit/left_side = 0
 8:4/0/terrains_peering_bit/top_side = 0
 
-[sub_resource type="TileSet" id="TileSet_dfldn"]
+[resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.501961, 0, 0.25098, 1)
 sources/0 = SubResource("TileSetAtlasSource_dwbse")
-
-[node name="World" type="Node2D"]
-
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -1
-texture_repeat = 2
-position = Vector2(160, 90)
-texture = ExtResource("1_m1u1f")
-region_enabled = true
-region_rect = Rect2(0, 0, 320, 180)
-
-[node name="DirtPathTileMap" type="TileMap" parent="."]
-position = Vector2(4, 0)
-tile_set = SubResource("TileSet_dfldn")
-format = 2
-layer_0/tile_data = PackedInt32Array(262144, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 327679, 0, 0, 393215, 0, 1, 327680, 65536, 1, 327681, 65536, 1, 327682, 65536, 1, 327683, 327680, 1, 327684, 131072, 2, 720903, 0, 3, 720904, 131072, 3, 8, 0, 1, -65528, 0, 0, 65544, 0, 2, 65545, 589824, 0, 65546, 65536, 0, 65547, 65536, 0, 65548, 65536, 0, 65549, 131072, 0, 131085, 131072, 1, 196621, 131072, 1, 262157, 327680, 2, 262158, 65536, 0, 262159, 65536, 0, 262160, 65536, 0, 262161, 65536, 0, 262162, 65536, 0, 262163, 65536, 0, 131081, 0, 1, 131082, 65536, 1, 131083, 65536, 1, 131084, 65536, 1, 196620, 65536, 1, 262156, 393216, 1, 720908, 0, 3, 720909, 393216, 3, 720910, 65536, 2, 720911, 65536, 2, 720912, 327680, 3, 720913, 65536, 3, 655376, 131072, 0, 655375, 65536, 0, 655374, 65536, 0, 655373, 0, 0, 327692, 0, 2, 327695, 65536, 2, 327696, 65536, 2, 327697, 65536, 2, 327698, 65536, 2, 327699, 65536, 2, 327693, 65536, 2, 327694, 65536, 2, 327700, 131072, 2, 262164, 131072, 0, 720914, 131072, 3, 9, 131072, 1, -65527, 131072, 0, 262147, 65536, 0, 262148, 327680, 0, 458751, 0, 2, 393216, 65536, 2, 393217, 65536, 2, 393218, 65536, 2, 393219, 131072, 2, 262149, 65536, 3, 262150, 393216, 3, 196614, 0, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 393216, 2, 196618, 65536, 1, 196619, 65536, 1, 262155, 65536, 2, 262154, 65536, 2, 262153, 65536, 2, 262152, 65536, 2, 262151, 65536, 2)
-
-[node name="DirtCliffTileMap" type="TileMap" parent="."]
-tile_set = ExtResource("3_dwbse")
-collision_animatable = true
-format = 2
-layer_0/tile_data = PackedInt32Array(0, 327680, 1, 65535, 0, 1, -1, 0, 0, -65536, 65536, 0, -65535, 65536, 0, -65534, 65536, 0, 2, 65536, 2, 1, 65536, 2, 65545, 196608, 2, 9, 524288, 1, 8, 0, 2, -65528, 0, 0, -65527, 65536, 0, -65526, 131072, 0, 10, 131072, 2, 65536, 131072, 2, 131071, 0, 2, 327680, 65536, 3, 327681, 65536, 3, 327682, 393216, 3, 327683, 65536, 2, 327684, 131072, 2, 262148, 458752, 2, 196612, 196608, 0, 262147, 65536, 0, 262146, 0, 0, 327689, 196608, 2, 262153, 589824, 3, 196617, 0, 0, 262152, 0, 3, 262154, 131072, 2, 196618, 327680, 0, 196619, 131072, 3, 3, 131072, 2, -65533, 131072, 0, 393215, 0, 3)
-
-[node name="Node2D" type="Node2D" parent="."]
-y_sort_enabled = true
-
-[node name="Player" parent="Node2D" instance=ExtResource("1_8ewt3")]
-position = Vector2(175, 56)
-
-[node name="Bushes" type="Node2D" parent="Node2D"]
-y_sort_enabled = true
-
-[node name="Bush" parent="Node2D/Bushes" instance=ExtResource("2_n5s63")]
-position = Vector2(216, 112)
-
-[node name="Bush2" parent="Node2D/Bushes" instance=ExtResource("2_n5s63")]
-position = Vector2(104, 104)
-
-[node name="Bush3" parent="Node2D/Bushes" instance=ExtResource("2_n5s63")]
-position = Vector2(72, 56)
-
-[node name="Bush4" parent="Node2D/Bushes" instance=ExtResource("2_n5s63")]
-position = Vector2(176, 144)
-
-[node name="Bush5" parent="Node2D/Bushes" instance=ExtResource("2_n5s63")]
-position = Vector2(240, 136)
-
-[node name="Bush6" parent="Node2D/Bushes" instance=ExtResource("2_n5s63")]
-position = Vector2(264, 56)
-
-[node name="Grass" type="Node2D" parent="Node2D"]
-
-[node name="Grass" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(48, 144)
-
-[node name="Grass2" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(32, 144)
-
-[node name="Grass3" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(16, 144)
-
-[node name="Grass4" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(32, 32)
-
-[node name="Grass5" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(272, 32)
-
-[node name="Grass6" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(240, 16)
-
-[node name="Grass7" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(192, 120)
-
-[node name="Grass8" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(272, 112)
-
-[node name="Grass9" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(256, 112)
-
-[node name="Grass10" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
-position = Vector2(272, 96)

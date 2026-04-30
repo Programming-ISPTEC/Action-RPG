@@ -602,11 +602,11 @@ animation = &"RollDown"
 blend_point_0/node = SubResource("AnimationNodeAnimation_vtle1")
 blend_point_0/pos = Vector2(-1, 0)
 blend_point_1/node = SubResource("AnimationNodeAnimation_od3ui")
-blend_point_1/pos = Vector2(0, 1.1)
+blend_point_1/pos = Vector2(0, -1.1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_00tjw")
 blend_point_2/pos = Vector2(1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_x3vf3")
-blend_point_3/pos = Vector2(0, -1.1)
+blend_point_3/pos = Vector2(0, 1.1)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
@@ -688,7 +688,7 @@ tree_root = SubResource("AnimationNodeStateMachine_buph8")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/blend_position = Vector2(-0.0015949, -0.0376068)
 parameters/Idle/blend_position = Vector2(-0.0143541, -1.16581)
-parameters/Roll/blend_position = Vector2(-0.185008, 0.556)
+parameters/Roll/blend_position = Vector2(0.0031898, 1.08791)
 parameters/Run/blend_position = Vector2(-0.114833, -0.629915)
 
 [node name="HitboxPivot" type="Marker2D" parent="."]
