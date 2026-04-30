@@ -1,6 +1,6 @@
 [gd_scene load_steps=53 format=3 uid="uid://dlw8k0qrb6ouf"]
 
-[ext_resource type="Script" uid="uid://dx6mnko3srx6w" path="res://Player/Player.cs" id="1_dmmad"]
+[ext_resource type="Script" uid="uid://bwo6rqyieklrg" path="res://Player/player.gd" id="1_btcbx"]
 [ext_resource type="Texture2D" uid="uid://bc83xyf5besv6" path="res://Player/Player.png" id="2_cf2a0"]
 [ext_resource type="PackedScene" uid="uid://80xflsfac4v2" path="res://HitBoxes and HurtBoxes/HitBox.tscn" id="3_dhbff"]
 
@@ -342,6 +342,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [55, 56, 57, 58, 59]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"rollAnimationFinished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_k53q1"]
 resource_name = "RollLeft"
@@ -357,6 +371,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [50, 51, 52, 53, 54]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"rollAnimationFinished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_btcbx"]
@@ -374,6 +402,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [40, 41, 42, 43, 44]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"rollAnimationFinished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_gwnis"]
 resource_name = "RollUp"
@@ -389,6 +431,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [45, 46, 47, 48, 49]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"rollAnimationFinished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_wvviu"]
@@ -611,7 +667,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 height = 32.2402
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_dmmad")
+script = ExtResource("1_btcbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)
@@ -633,7 +689,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/blend_position = Vector2(-0.0015949, -0.0376068)
 parameters/Idle/blend_position = Vector2(-0.0143541, -1.16581)
 parameters/Roll/blend_position = Vector2(-0.185008, 0.556)
-parameters/Run/blend_position = Vector2(0.0015949, -0.964)
+parameters/Run/blend_position = Vector2(-0.114833, -0.629915)
 
 [node name="HitboxPivot" type="Marker2D" parent="."]
 position = Vector2(0, -4)

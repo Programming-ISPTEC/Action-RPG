@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var ACCELERATION = 500
 @export var MAX_SPEED = 80
 @export var FRICTION = 500;
+
+@export var playerPos = Vector2(1,0);
 	
 enum movimento {
 	MOVE,
@@ -13,7 +15,7 @@ enum movimento {
 
 var state = movimento.MOVE
 
-@onready var animationPlayer = get_node("AnimmationPlayer")
+@onready var animationPlayer = get_node("AnimationPlayer")
 @onready var animationTree = get_node("AnimationTree")
 
 @onready var animationState = animationTree.get("parameters/playback") as AnimationNodeStateMachinePlayback
@@ -35,6 +37,7 @@ func moveState(delta) -> void:
 	input = input.normalized();
 
 	if (input != Vector2.ZERO):
+		playerPos = input
 		animationTree.set("parameters/Idle/blend_position", input);
 		
 		animationTree.set("parameters/Run/blend_position", input);
@@ -58,7 +61,7 @@ func moveState(delta) -> void:
 		state = movimento.ROLL
 
 func attackState(delta) -> void:
-	##velocity = Vector2.ZERO;
+	velocity = Vector2.ZERO;
 	animationState.travel("Attack");
 	
 func attackAnimationFinished() -> void:
@@ -66,15 +69,19 @@ func attackAnimationFinished() -> void:
 
 
 func rollState(delta) -> void:
-	var x = Vector2.ZERO
-	x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left");
-	var y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up");
-	var input = Vector2(x, y);
-	input = input.normalized();
+	var input = Vector2(
+		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	)
 	
-	animationState.travel("Roll");
+	if input != Vector2.ZERO:
+		playerPos = input.normalized()
+	
+	animationState.travel("Roll")
+	velocity = velocity.move_toward(MAX_SPEED * playerPos, ACCELERATION * delta)
+	move_and_slide()
 	
 
-func _on_animation_tree_finished(Roll):
+func rollAnimationFinished():
 	print("Entrou")
 	state = movimento.MOVE;
