@@ -1,8 +1,8 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://qf3ne4hc53p7"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://brb8crgho5rk0"]
 
 [ext_resource type="Texture2D" uid="uid://ds5wutlyuexf4" path="res://World/CliffTileset.png" id="1_kxg7e"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pkg7o"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5cs3o"]
 texture = ExtResource("1_kxg7e")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -369,9 +369,6 @@ texture_region_size = Vector2i(32, 32)
 8:4/0/terrains_peering_bit/bottom_side = 0
 8:4/0/terrains_peering_bit/left_side = 0
 8:4/0/terrains_peering_bit/top_side = 0
-1:1/0 = 0
-10:1/0 = 0
-10:0/0 = 0
 
 [resource]
 tile_size = Vector2i(32, 32)
@@ -379,4 +376,4 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.960784, 0, 0.501961, 1)
-sources/0 = SubResource("TileSetAtlasSource_pkg7o")
+sources/0 = SubResource("TileSetAtlasSource_5cs3o")
