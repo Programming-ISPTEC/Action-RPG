@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq2afo0oggabd"]
+[gd_scene load_steps=10 format=3 uid="uid://cq2afo0oggabd"]
 
 [ext_resource type="PackedScene" uid="uid://dlw8k0qrb6ouf" path="res://Player/player.tscn" id="1_8ewt3"]
 [ext_resource type="Texture2D" uid="uid://bl63ngg6hpqi1" path="res://World/GrassBackground.png" id="1_m1u1f"]
 [ext_resource type="Texture2D" uid="uid://c54qn4siiijd1" path="res://World/DirtTileset.png" id="2_1cetj"]
 [ext_resource type="PackedScene" uid="uid://bb4uev1vkmx7" path="res://World/bush.tscn" id="2_n5s63"]
-[ext_resource type="TileSet" uid="uid://qf3ne4hc53p7" path="res://World/cliffTileset.tres" id="3_dwbse"]
+[ext_resource type="TileSet" uid="uid://brb8crgho5rk0" path="res://World/cliffTileset.tres" id="3_dwbse"]
 [ext_resource type="PackedScene" uid="uid://cj3ao0ape72t3" path="res://World/grass.tscn" id="6_ivxba"]
+[ext_resource type="PackedScene" uid="uid://cf71yy5pdbco4" path="res://Enemies/bat.tscn" id="7_pkg7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwbse"]
 texture = ExtResource("2_1cetj")
@@ -425,3 +426,6 @@ position = Vector2(256, 112)
 
 [node name="Grass10" parent="Node2D/Grass" instance=ExtResource("6_ivxba")]
 position = Vector2(272, 96)
+
+[node name="Bat" parent="Node2D" instance=ExtResource("7_pkg7o")]
+position = Vector2(28, 79)

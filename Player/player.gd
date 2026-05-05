@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var ACCELERATION = 500
 @export var MAX_SPEED = 80
 @export var FRICTION = 500;
+@export_category("ROLL")
+@export var ROLL_SPEED:float = 160
 
 @export var playerPos = Vector2(1,0);
 	
@@ -78,7 +80,7 @@ func rollState(delta) -> void:
 		playerPos = input.normalized()
 	
 	animationState.travel("Roll")
-	velocity = velocity.move_toward(MAX_SPEED * playerPos, ACCELERATION * delta)
+	velocity = velocity.move_toward(ROLL_SPEED * playerPos, ACCELERATION * delta)
 	move_and_slide()
 	
 

@@ -666,7 +666,8 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2iwbu"]
 height = 32.2402
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
 script = ExtResource("1_btcbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
