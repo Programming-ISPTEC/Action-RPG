@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cf71yy5pdbco4"]
+[gd_scene load_steps=11 format=3 uid="uid://cf71yy5pdbco4"]
 
 [ext_resource type="Script" uid="uid://cg11fuaqps2al" path="res://bat.gd" id="1_g687e"]
 [ext_resource type="Texture2D" uid="uid://b8a36jqd4hvxu" path="res://Enemies/Bat.png" id="2_va2ne"]
 [ext_resource type="Script" uid="uid://bwfc5rh6m8vm" path="res://Enemies/enemy_idle.gd" id="3_g687e"]
 [ext_resource type="Script" uid="uid://dv4px82jq6yj2" path="res://Enemies/state_machine.gd" id="3_va2ne"]
 [ext_resource type="Script" uid="uid://g1ilkcy1sna2" path="res://Enemies/enemy_chase.gd" id="5_i84q7"]
+[ext_resource type="Texture2D" uid="uid://7hwan7klgvwp" path="res://Shadows/SmallShadow.png" id="6_nc5xu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g687e"]
 radius = 2.99999
@@ -38,12 +39,13 @@ _data = {
 script = ExtResource("1_g687e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -34)
 texture = ExtResource("2_va2ne")
 hframes = 5
 vframes = 2
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, -31)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_g687e")
 
@@ -53,6 +55,7 @@ libraries = {
 }
 
 [node name="detection_area" type="Area2D" parent="."]
+position = Vector2(0, -34)
 collision_layer = 2
 collision_mask = 2
 
@@ -61,6 +64,7 @@ scale = Vector2(7, 7)
 shape = SubResource("CircleShape2D_vut0d")
 
 [node name="State_machine" type="Node2D" parent="." node_paths=PackedStringArray("initial_state")]
+position = Vector2(0, -34)
 script = ExtResource("3_va2ne")
 initial_state = NodePath("Idle")
 
@@ -76,3 +80,7 @@ script = ExtResource("5_i84q7")
 enemy = NodePath("../..")
 detectionArea = NodePath("../../detection_area")
 metadata/_custom_type_script = "uid://g1ilkcy1sna2"
+
+[node name="ShadowSprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("6_nc5xu")

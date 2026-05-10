@@ -1,8 +1,9 @@
-[gd_scene load_steps=53 format=3 uid="uid://dlw8k0qrb6ouf"]
+[gd_scene load_steps=54 format=3 uid="uid://dlw8k0qrb6ouf"]
 
 [ext_resource type="Script" uid="uid://bwo6rqyieklrg" path="res://Player/player.gd" id="1_btcbx"]
 [ext_resource type="Texture2D" uid="uid://bc83xyf5besv6" path="res://Player/Player.png" id="2_cf2a0"]
 [ext_resource type="PackedScene" uid="uid://80xflsfac4v2" path="res://HitBoxes and HurtBoxes/HitBox.tscn" id="3_dhbff"]
+[ext_resource type="Texture2D" uid="uid://d32aqe76ejf7a" path="res://Shadows/MediumShadow.png" id="3_gwnis"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a4by3"]
 radius = 4.0
@@ -690,12 +691,16 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_buph8")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/blend_position = Vector2(-0.0015949, -0.0376068)
-parameters/Idle/blend_position = Vector2(-0.0143541, -1.16581)
+parameters/Idle/blend_position = Vector2(0.0072639, 1.06944)
 parameters/Roll/blend_position = Vector2(0.0031898, 1.08791)
 parameters/Run/blend_position = Vector2(-0.114833, -0.629915)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
+
+[node name="ShadowSprite2D2" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 3)
+texture = ExtResource("3_gwnis")
 
 [node name="HitboxPivot" type="Marker2D" parent="."]
 position = Vector2(0, -4)
