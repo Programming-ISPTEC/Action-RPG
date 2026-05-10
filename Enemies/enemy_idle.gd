@@ -17,7 +17,7 @@ func Update(delta: float):
 	else:
 		_randomize_wander()
 
-func Physics_update(delta: float):
+func Physics_update(_delta: float):
 	if enemy && !chasing:
 		enemy.velocity = move_direction * MOVE_SPEED
 	if chasing:

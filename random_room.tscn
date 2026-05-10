@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cx4jrjeor4fqs" path="res://addons/gaea/modifiers/2D/modifier_2d.gd" id="2_qeykb"]
 [ext_resource type="Script" uid="uid://dwcj7sprw5inf" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="3_uwcn2"]
 [ext_resource type="Script" uid="uid://cla2f7d8dpw7q" path="res://addons/gaea/modifiers/2D/walls.gd" id="5_0a17u"]
-[ext_resource type="TileSet" uid="uid://qf3ne4hc53p7" path="res://World/cliffTileset.tres" id="5_mue3s"]
+[ext_resource type="TileSet" uid="uid://brb8crgho5rk0" path="res://World/cliffTileset.tres" id="5_mue3s"]
 [ext_resource type="Script" uid="uid://ckhplr7wpt78a" path="res://addons/gaea/generators/2D/walker_generator/walker_generator_settings.gd" id="7_xu1d4"]
 [ext_resource type="Texture2D" uid="uid://c54qn4siiijd1" path="res://World/DirtTileset.png" id="8_agi73"]
 [ext_resource type="Script" uid="uid://1xw7y0ee1whq" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="10_m2nik"]
@@ -375,9 +375,8 @@ region_rect = Rect2(0, 0, 1028, 1028)
 
 [node name="Player" parent="." instance=ExtResource("12_m8pjr")]
 position = Vector2(3, -61)
-playerPos = Vector2(0, 0)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 offset = Vector2(1, 1)
 zoom = Vector2(0.8, 0.8)
 
@@ -388,16 +387,14 @@ tile_set = SubResource("TileSet_tidfl")
 [node name="Cliff" type="TileMapLayer" parent="."]
 tile_set = ExtResource("5_mue3s")
 
-[node name="TilemapGaeaRenderer" type="Node" parent="." node_paths=PackedStringArray("tile_map_layers", "generator")]
+[node name="TilemapGaeaRenderer" type="Node" parent="." node_paths=PackedStringArray("tile_map_layers")]
 script = ExtResource("10_m2nik")
 tile_map_layers = [NodePath("../Dirt"), NodePath("../Cliff")]
-generator = NodePath("../DirtGenerator")
 metadata/_custom_type_script = "uid://1xw7y0ee1whq"
 
 [node name="CliffGenerator" type="Node" parent="."]
 script = ExtResource("1_b5ovq")
 settings = SubResource("Resource_b5ovq")
-tile_size = Vector2i(32, 32)
 metadata/_custom_type_script = "uid://copnr53wetfar"
 
 [node name="DirtGenerator" type="Node" parent="."]

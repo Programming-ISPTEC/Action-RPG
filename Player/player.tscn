@@ -11,6 +11,7 @@ height = 12.0
 [sub_resource type="Animation" id="Animation_wrvql"]
 resource_name = "AttackDown"
 length = 0.4
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -451,6 +452,7 @@ tracks/1/keys = {
 resource_name = "RunDown"
 length = 0.6
 loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -691,6 +693,9 @@ parameters/Attack/blend_position = Vector2(-0.0015949, -0.0376068)
 parameters/Idle/blend_position = Vector2(-0.0143541, -1.16581)
 parameters/Roll/blend_position = Vector2(0.0031898, 1.08791)
 parameters/Run/blend_position = Vector2(-0.114833, -0.629915)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 
 [node name="HitboxPivot" type="Marker2D" parent="."]
 position = Vector2(0, -4)
