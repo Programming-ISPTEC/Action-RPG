@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq2afo0oggabd"]
+[gd_scene load_steps=11 format=3 uid="uid://cq2afo0oggabd"]
 
 [ext_resource type="PackedScene" uid="uid://dlw8k0qrb6ouf" path="res://Player/player.tscn" id="1_8ewt3"]
 [ext_resource type="Texture2D" uid="uid://bl63ngg6hpqi1" path="res://World/GrassBackground.png" id="1_m1u1f"]
@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://brb8crgho5rk0" path="res://World/cliffTileset.tres" id="3_dwbse"]
 [ext_resource type="PackedScene" uid="uid://cj3ao0ape72t3" path="res://World/grass.tscn" id="6_ivxba"]
 [ext_resource type="PackedScene" uid="uid://cf71yy5pdbco4" path="res://Enemies/bat.tscn" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://wgbigykdha6c" path="res://World/tree.tscn" id="8_gbfbk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwbse"]
 texture = ExtResource("2_1cetj")
@@ -348,7 +349,10 @@ sources/0 = SubResource("TileSetAtlasSource_dwbse")
 
 [node name="World" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 180)
+
+[node name="Background" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
 texture_repeat = 2
 position = Vector2(160, 90)
@@ -373,6 +377,12 @@ y_sort_enabled = true
 
 [node name="Player" parent="Node2D" instance=ExtResource("1_8ewt3")]
 position = Vector2(175, 56)
+
+[node name="Trees" type="Node2D" parent="Node2D"]
+y_sort_enabled = true
+
+[node name="Tree" parent="Node2D/Trees" instance=ExtResource("8_gbfbk")]
+position = Vector2(230, 73)
 
 [node name="Bushes" type="Node2D" parent="Node2D"]
 y_sort_enabled = true
