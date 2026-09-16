@@ -676,7 +676,7 @@ script = ExtResource("1_btcbx")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)
 texture = ExtResource("2_cf2a0")
-hframes = 60
+hframes = 76
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -699,7 +699,7 @@ parameters/Run/blend_position = Vector2(-0.114833, -0.629915)
 
 [node name="ShadowSprite2D2" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(0, 3)
+position = Vector2(-2, 2)
 texture = ExtResource("3_gwnis")
 
 [node name="HitboxPivot" type="Marker2D" parent="."]
